@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ── EDIT HERE: Page title & meta ── -->
+  <title>CoreForge v3 · Dinesh Kumar Mohanta</title>
+  <meta name="description" content="Portfolio of Dinesh Kumar Mohanta — Java Backend Developer, Bhubaneswar, India.">
+  <meta name="author"      content="Dinesh Kumar Mohanta">
+
+  <!-- ── Google Fonts (Bebas Neue · Rajdhani · JetBrains Mono) ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- ── Portfolio Stylesheet ── -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- ════════════════════════════════════════════════════════════
+       AMBIENT LAYERS  (fixed, behind all content)
+       ════════════════════════════════════════════════════════════ -->
+
+  <!-- Scroll progress bar (top edge) -->
+  <div id="spb"></div>
+
+  <!-- Futuristic crosshair cursor (3-part: crosshair + lagging ring + center dot) -->
+  <div class="cur-crosshair" id="cc"></div>
+  <div class="cur-ring"      id="cr"></div>
+  <div class="cur-dot"       id="cd"></div>
+
+  <!-- Aurora gradient blobs (CSS animated, fixed background) -->
+  <div class="aurora">
+    <div class="ab a1"></div>
+    <div class="ab a2"></div>
+    <div class="ab a3"></div>
+  </div>
+
+  <!-- Mouse spotlight overlay -->
+  <div id="spl"></div>
+
+  <!-- Particle canvas (JS-drawn, 70 floating dots with connection lines) -->
+  <canvas id="bgc"></canvas>
+
+
+  <!-- ════════════════════════════════════════════════════════════
+       NAVIGATION
+       ════════════════════════════════════════════════════════════ -->
+  <nav id="nav">
+    <!-- ── EDIT HERE: logo text / brand name ── -->
+    <a class="logo" href="#hero">COREFORGE</a>
+
+    <!-- ── EDIT HERE: add / remove nav links to match your sections ── -->
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certs</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- "Open to Work" pulsing status badge -->
+    <div class="nav-status">
+      <div class="ns-dot"></div>
+      <span>Open to Work</span>
+    </div>
+  </nav>
+
+
+  <!-- ════════════════════════════════════════════════════════════
+       MAIN CONTENT WRAPPER
+       ════════════════════════════════════════════════════════════ -->
+  <div class="wrapper">
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 1 · HERO
+         ══════════════════════════════════════════════════════════ -->
+    <section id="hero">
+      <div class="hero-grid">
+
+        <!-- Left column: headline + CTA buttons -->
+        <div class="hero-left">
+
+          <!-- ── EDIT HERE: eyebrow line ── -->
+          <div class="hero-eyebrow">
+            <div class="blink-dot"></div>
+            Open to Work · Java Developer · MNC-Ready
+          </div>
+
+          <!-- ── EDIT HERE: your name ── -->
+          <h1 class="hero-name">
+            <span class="n1">Dinesh Kumar</span>
+            <span class="n2">Mohanta</span>
+          </h1>
+
+          <!-- Typed roles — array is configured in js/main.js ROLES constant -->
+          <div class="hero-role-wrap" id="typed"></div>
+
+          <!-- ── EDIT HERE: hero description ── -->
+          <p class="hero-desc">
+            Final-year <strong>CSE student</strong> shipping real Java desktop apps with
+            <strong>Swing, AWT, OOP &amp; DSA</strong>. Internship-tested. 5 live projects.
+            10 certifications. Production-minded.
+          </p>
+
+          <!-- ── EDIT HERE: CTA buttons ── -->
+          <div class="hero-btns">
+            <a href="#contact" class="btn-mag primary">✦ Hire Me</a>
+            <a href="https://github.com/TechyDi" target="_blank" class="btn-mag ghost">⌥ GitHub</a>
+            <!-- Resume PDF lives in assets/resume/ -->
+            <a href="assets/resume/Dinesh_Kumar_Mohanta_CV.pdf"
+               download="Dinesh_Kumar_Mohanta_CV.pdf"
+               class="btn-mag ghost">⬇ Download CV</a>
+          </div>
+        </div><!-- /hero-left -->
+
+        <!-- Right column: photo frame with orbiting rings + stat cards -->
+        <div class="hero-photo-area">
+          <div class="hex-frame">
+            <!-- Animated rings -->
+            <div class="ring-orbit"></div>
+            <div class="ring-orbit2"></div>
+            <!-- Orbiting accent dots -->
+            <div class="od1"></div>
+            <div class="od2"></div>
+
+            <!-- ── EDIT HERE: replace photo.png in assets/images/ ── -->
+            <div class="photo-clip">
+              <img src="assets/images/photo.png" alt="Dinesh Kumar Mohanta">
+            </div>
+
+            <!-- Corner brackets -->
+            <div class="corner tl"></div>
+            <div class="corner tr"></div>
+            <div class="corner bl"></div>
+            <div class="corner br"></div>
+
+            <!-- ── EDIT HERE: stat card values ── -->
+            <!-- Click scrolls to #projects -->
+            <div class="float-card fc-proj"
+                 onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})"
+                 title="View Projects">
+              <div>
+                <div class="float-val">5+</div>
+                <div class="float-lbl">Live<br>Projects</div>
+              </div>
+            </div>
+
+            <!-- Click scrolls to #certifications -->
+            <div class="float-card fc-cert"
+                 onclick="document.getElementById('certifications').scrollIntoView({behavior:'smooth'})"
+                 title="View Certifications">
+              <div>
+                <div class="float-val">10</div>
+                <div class="float-lbl">Earned<br>Certs</div>
+              </div>
+            </div>
+
+          </div><!-- /hex-frame -->
+        </div><!-- /hero-photo-area -->
+
+      </div><!-- /hero-grid -->
+    </section><!-- /hero -->
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 2 · ABOUT
+         ══════════════════════════════════════════════════════════ -->
+    <section id="about">
+      <div class="s-tag reveal">00 · About Me</div>
+      <h2 class="s-title reveal">Who I <em>Am</em></h2>
+
+      <div class="about-wrap">
+
+        <!-- Left: bio paragraphs + info pills -->
+        <div class="about-body reveal">
+          <!-- ── EDIT HERE: bio text ── -->
+          <p>I'm a <mark>final-year CSE student</mark> at Krupajal Engineering College building Java
+             desktop apps with real GUI, real logic, and real deadlines — not just exercises.</p>
+          <p>I've shipped <mark>5 production-ready projects</mark> across two internships: an ATM banking
+             simulator, a Student Management Portal, a Grade Calculator, a full-featured NLP chatbot,
+             and a Power BI analytics dashboard.</p>
+          <p>My approach: <mark>clean architecture first</mark> — separate UI from data models, validate
+             every input, handle every edge case. Software that works the first time and survives real use.</p>
+          <p>Currently targeting <mark>Java Developer / Backend Engineer roles at MNCs</mark> — ready
+             to contribute from week one.</p>
+
+          <!-- ── EDIT HERE: info pills (icon / key / value) ── -->
+          <div class="info-pills">
+            <div class="pill reveal">
+              <span class="pill-icon">🎓</span>
+              <span class="pill-key">Degree</span>
+              <span class="pill-val">B.Tech CSE · KEC Bhubaneswar (2022–2026)</span>
+            </div>
+            <div class="pill reveal">
+              <span class="pill-icon">📍</span>
+              <span class="pill-key">Location</span>
+              <span class="pill-val">Bhubaneswar, Odisha, India</span>
+            </div>
+            <div class="pill reveal">
+              <span class="pill-icon">💼</span>
+              <span class="pill-key">Internships</span>
+              <span class="pill-val">CodSoft (Java) · Edunet / AICTE / Shell (AI)</span>
+            </div>
+            <div class="pill reveal">
+              <span class="pill-icon">📅</span>
+              <span class="pill-key">Available</span>
+              <span class="pill-val">May 2026 · Full-time · Relocation OK</span>
+            </div>
+          </div>
+        </div><!-- /about-body -->
+
+        <!-- Right: terminal code block -->
+        <div class="terminal reveal">
+          <div class="t-bar">
+            <div class="t-dot r"></div>
+            <div class="t-dot y"></div>
+            <div class="t-dot g"></div>
+            <span class="t-title">dinesh@coreforge ~ profile.java</span>
+          </div>
+          <div class="t-body">
+            <!-- ── EDIT HERE: terminal code snippet ── -->
+            <pre><span class="tm">// CoreForge Profile v3.0</span>
+<span class="tc">public class</span> <span class="tg">DineshMohanta</span> <span class="tc">extends</span> Developer {
+
+  String  name    = <span class="ta">"Dinesh Kumar Mohanta"</span>;
+  String  role    = <span class="ta">"Java Backend Developer"</span>;
+  String  stack   = <span class="ta">"Java · Swing · OOP · Python"</span>;
+  int     shipped = <span class="ta">5</span>; <span class="tm">// real projects</span>
+  int     certs   = <span class="ta">10</span>; <span class="tm">// earned credentials</span>
+  String  phone   = <span class="ta">"+91-6372524715"</span>;
+
+  boolean openToWork = <span class="tp">true</span>;
+  boolean relocate   = <span class="tp">true</span>;
+
+  <span class="tc">@Override public</span> String toString() {
+    <span class="tc">return</span> <span class="ta">"Code. Ship. Repeat."</span>;
+  }
+}</pre>
+          </div>
+        </div><!-- /terminal -->
+
+      </div><!-- /about-wrap -->
+    </section><!-- /about -->
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 3 · SKILLS
+         ══════════════════════════════════════════════════════════ -->
+    <section id="skills">
+      <div class="s-tag reveal">01 · Skills</div>
+      <h2 class="s-title reveal">Technical <em>Arsenal</em></h2>
+
+      <div class="skills-layout">
+
+        <!-- ── Card 1: Core Java & GUI ─────────────────────────── -->
+        <!-- ── EDIT HERE: change skill names / percentages ── -->
+        <div class="skill-card reveal">
+          <div class="sk-content">
+            <div class="sk-head">
+              <div class="sk-icon">☕</div>
+              <div class="sk-title">Core Java &amp; GUI</div>
+            </div>
+            <!-- data-w = bar fill width % (animated on scroll reveal) -->
+            <div class="bar-row">
+              <div class="bar-info"><span>Core Java (SE)</span><span>88%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-w="88"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-info"><span>OOP Principles</span><span>90%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-w="90"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-info"><span>Java Swing / AWT</span><span>85%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-w="85"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-info"><span>Data Structures &amp; Algorithms</span><span>82%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-w="82"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-info"><span>Exception Handling</span><span>86%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-w="86"></div></div>
+            </div>
+          </div>
+        </div><!-- /skill-card -->
+
+        <!-- ── Card 2: AI & Python ────────────────────────────── -->
+        <div class="skill-card reveal">
+          <div class="sk-content">
+            <div class="sk-head">
+              <div class="sk-icon">🤖</div>
+              <div class="sk-title">AI &amp; Python</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-info"><span>Python</span><span>80%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-w="80"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-info"><span>NLP &amp; Intent Recognition</span><span>75%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-w="75"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-info"><span>Generative AI</span><span>72%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-w="72"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-info"><span>Microsoft Power BI</span><span>70%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-w="70"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-info"><span>Data Analytics</span><span>74%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-w="74"></div></div>
+            </div>
+          </div>
+        </div><!-- /skill-card -->
+
+        <!-- ── Card 3: Tools & Concepts ───────────────────────── -->
+        <div class="skill-card reveal">
+          <div class="sk-content">
+            <div class="sk-head">
+              <div class="sk-icon">🛠</div>
+              <div class="sk-title">Tools &amp; Concepts</div>
+            </div>
+            <!-- ── EDIT HERE: add/remove .stag items ── -->
+            <div class="tag-grid">
+              <span class="stag">Git &amp; GitHub</span>
+              <span class="stag">IntelliJ IDEA</span>
+              <span class="stag">VS Code</span>
+              <span class="stag">Agile/Scrum</span>
+              <span class="stag">Java Serialization</span>
+              <span class="stag">Event Listeners</span>
+              <span class="stag">Regex Validation</span>
+              <span class="stag">HTML &amp; CSS</span>
+              <span class="stag">SQL</span>
+              <span class="stag">Maven</span>
+              <span class="stag">Secure Coding</span>
+              <span class="stag">CellRenderer</span>
+            </div>
+          </div>
+        </div><!-- /skill-card -->
+
+        <!-- ── Card 4: Soft Skills ────────────────────────────── -->
+        <div class="skill-card reveal">
+          <div class="sk-content">
+            <div class="sk-head">
+              <div class="sk-icon">💬</div>
+              <div class="sk-title">Soft Skills</div>
+            </div>
+            <div class="tag-grid">
+              <span class="stag">Problem Solving</span>
+              <span class="stag">Teamwork</span>
+              <span class="stag">Communication</span>
+              <span class="stag">Deadline Mgmt</span>
+              <span class="stag">Class Representative</span>
+              <span class="stag">Digital Marketing</span>
+              <span class="stag">Event Organization</span>
+              <span class="stag">Leadership</span>
+              <span class="stag">Self-Learning</span>
+              <span class="stag">Documentation</span>
+            </div>
+          </div>
+        </div><!-- /skill-card -->
+
+      </div><!-- /skills-layout -->
+    </section><!-- /skills -->
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 4 · EXPERIENCE
+         ══════════════════════════════════════════════════════════ -->
+    <section id="experience">
+      <div class="s-tag reveal">02 · Experience</div>
+      <h2 class="s-title reveal">Work <em>History</em></h2>
+
+      <div class="exp-wrap">
+        <!-- Vertical timeline line -->
+        <div class="exp-line"></div>
+
+        <!-- ── EDIT HERE: duplicate .exp-item for more roles ── -->
+
+        <!-- Internship 1 -->
+        <div class="exp-item reveal">
+          <div class="exp-dot-col"><div class="exp-dot">☕</div></div>
+          <div class="exp-card">
+            <div class="exp-top">
+              <div class="exp-role">Java Programming Intern</div>
+              <div class="exp-badge">Dec 2025 – Jan 2026</div>
+            </div>
+            <div class="exp-co"><span>CodSoft</span> · Virtual / Remote · 4-week structured program</div>
+            <ul class="exp-pts">
+              <li>Shipped <strong>3 fully functional Java desktop apps</strong> (Swing/AWT GUIs):
+                  ATM Simulation, Student Management Portal (with live search), Grade Calculator
+                  — all ahead of deadline.</li>
+              <li>Implemented <strong>Live Search engine</strong> (DocumentListener) cutting retrieval time ~40%;
+                  custom CellRenderer for dynamic term highlighting; Java Serialization for 100% data
+                  integrity across restarts.</li>
+              <li>Applied <strong>regex-based validation</strong> reducing user errors ~90%; built secure
+                  encapsulation for banking logic with robust exception handling.</li>
+              <li>Completed <strong>20+ algorithmic exercises</strong> and 15+ Java programs. Earned
+                  <em>Certificate of Completion</em> with wonderful remarks.</li>
+            </ul>
+            <div class="tech-row">
+              <span class="tech-badge">Core Java</span>
+              <span class="tech-badge">OOP</span>
+              <span class="tech-badge">Java Swing</span>
+              <span class="tech-badge">AWT</span>
+              <span class="tech-badge">Collections</span>
+              <span class="tech-badge">IO Serialization</span>
+              <span class="tech-badge">Regex</span>
+            </div>
+          </div>
+        </div><!-- /exp-item -->
+
+        <!-- Internship 2 -->
+        <div class="exp-item reveal">
+          <div class="exp-dot-col"><div class="exp-dot">🤖</div></div>
+          <div class="exp-card">
+            <div class="exp-top">
+              <div class="exp-role">AI &amp; Data Analytics Intern</div>
+              <div class="exp-badge">Dec 2024 – Jan 2025</div>
+            </div>
+            <div class="exp-co"><span>Edunet Foundation</span> · AICTE + Shell · Skills4Future Program · Virtual</div>
+            <ul class="exp-pts">
+              <li>Designed and deployed <strong>Intentia</strong> — a voice + text NLP chatbot handling
+                  100+ queries with ~<strong>85% accuracy</strong> using intent recognition and entity extraction.</li>
+              <li>Implemented full dialogue pipeline: context-aware response flow, user rating system, and
+                  voice recognition toggle — delivered as a polished deployable web app.</li>
+              <li>Collaborated in an agile team of <strong>20+ interns</strong> across weekly sprints and peer
+                  reviews. All milestones met in 4 weeks.</li>
+              <li>Earned <em>Certificate of Completion</em> signed by AICTE Chief Coordinating Officer,
+                  Edunet Chairman, and Shell SP Manager.</li>
+            </ul>
+            <div class="tech-row">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">NLP</span>
+              <span class="tech-badge">Generative AI</span>
+              <span class="tech-badge">Voice Recognition</span>
+              <span class="tech-badge">Agile</span>
+              <span class="tech-badge">Conversational AI</span>
+            </div>
+          </div>
+        </div><!-- /exp-item -->
+
+      </div><!-- /exp-wrap -->
+    </section><!-- /experience -->
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 5 · PROJECTS
+         ══════════════════════════════════════════════════════════ -->
+    <section id="projects">
+      <div class="s-tag reveal">03 · Projects</div>
+      <h2 class="s-title reveal">What I've <em>Shipped</em></h2>
+
+      <!--
+        ── EDIT HERE: To add a new project, copy one .proj-card block,
+           paste it below the last card, update the image src, name,
+           description, stack tags, and the .proj-num counter.
+      -->
+      <div class="proj-showcase">
+
+        <!-- Project 1: ATM Interface -->
+        <div class="proj-card reveal">
+          <div class="proj-preview">
+            <!-- Replace with your screenshot in assets/images/ -->
+            <img src="assets/images/project_atm.jpg" alt="ATM Interface Simulation">
+            <div class="proj-preview-label">Java · Swing · OOP</div>
+          </div>
+          <div class="proj-num">01</div>
+          <div class="proj-body">
+            <div class="proj-name">ATM Interface Simulation</div>
+            <p class="proj-desc">Secure banking desktop app — deposits, withdrawals, balance inquiries
+               with strict encapsulation, real-time validation, and bulletproof exception handling.</p>
+            <div class="proj-stack">
+              <span class="ps">Core Java</span>
+              <span class="ps">OOP</span>
+              <span class="ps">Swing GUI</span>
+              <span class="ps">Encapsulation</span>
+              <span class="ps">Secure Coding</span>
+            </div>
+            <a href="https://github.com/TechyDi" target="_blank" class="proj-link">⌥ GitHub</a>
+          </div>
+        </div><!-- /proj-card -->
+
+        <!-- Project 2: Grade Calculator -->
+        <div class="proj-card reveal">
+          <div class="proj-preview">
+            <img src="assets/images/project_grade.jpg" alt="Student Grade Calculator">
+            <div class="proj-preview-label">Java · AWT · Regex</div>
+          </div>
+          <div class="proj-num">02</div>
+          <div class="proj-body">
+            <div class="proj-name">Student Grade Calculator</div>
+            <p class="proj-desc">Regex-based input validation (~90% error reduction), dynamic A–F grade
+               algorithm, and zero-latency real-time feedback on every keystroke.</p>
+            <div class="proj-stack">
+              <span class="ps">Java AWT</span>
+              <span class="ps">Event Listeners</span>
+              <span class="ps">Regex</span>
+              <span class="ps">Input Validation</span>
+            </div>
+            <a href="https://github.com/TechyDi" target="_blank" class="proj-link">⌥ GitHub</a>
+          </div>
+        </div><!-- /proj-card -->
+
+        <!-- Project 3: Student Management System -->
+        <div class="proj-card reveal">
+          <div class="proj-preview">
+            <img src="assets/images/project_sms.jpg" alt="Student Management System">
+            <div class="proj-preview-label">Java SE · Swing · Collections</div>
+          </div>
+          <div class="proj-num">03</div>
+          <div class="proj-body">
+            <div class="proj-name">Student Management System</div>
+            <p class="proj-desc">Full educational desktop portal with Live Search (DocumentListener,
+               ~40% faster), custom CellRenderer term-highlighting, and Java Serialization for 100%
+               data persistence.</p>
+            <div class="proj-stack">
+              <span class="ps">Java SE</span>
+              <span class="ps">Swing</span>
+              <span class="ps">AWT</span>
+              <span class="ps">Collections</span>
+              <span class="ps">IO Serialization</span>
+            </div>
+            <a href="https://github.com/TechyDi" target="_blank" class="proj-link">⌥ GitHub</a>
+          </div>
+        </div><!-- /proj-card -->
+
+        <!-- Project 4: NLP Chatbot -->
+        <div class="proj-card reveal">
+          <div class="proj-preview">
+            <img src="assets/images/project_chatbot.jpg" alt="Intentia NLP Chatbot">
+            <div class="proj-preview-label">Python · NLP · Voice AI</div>
+          </div>
+          <div class="proj-num">04</div>
+          <div class="proj-body">
+            <div class="proj-name">Intentia — NLP Chatbot</div>
+            <p class="proj-desc">Voice + text conversational AI handling 100+ queries at ~85% accuracy.
+               Intent recognition, entity extraction, context-aware dialogue, user rating system.</p>
+            <div class="proj-stack">
+              <span class="ps">Python</span>
+              <span class="ps">NLP</span>
+              <span class="ps">Intent Recognition</span>
+              <span class="ps">Voice</span>
+            </div>
+            <a href="https://github.com/TechyDi" target="_blank" class="proj-link">⌥ GitHub</a>
+          </div>
+        </div><!-- /proj-card -->
+
+        <!-- Project 5: Power BI Dashboard (no screenshot — placeholder graphic) -->
+        <div class="proj-card reveal">
+          <div class="proj-preview" style="background:linear-gradient(135deg,#0a1628,#0d2040);
+               display:flex;align-items:center;justify-content:center;">
+            <div style="text-align:center;">
+              <div style="font-size:3rem;">📊</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:.7rem;
+                   color:var(--c1);margin-top:8px;">Power BI Dashboard</div>
+            </div>
+            <div class="proj-preview-label">Power BI · DAX · Analytics</div>
+          </div>
+          <div class="proj-num">05</div>
+          <div class="proj-body">
+            <div class="proj-name">Data Visualization Dashboard</div>
+            <p class="proj-desc">Interactive Power BI dashboard transforming raw datasets into KPI-driven
+               business insights using DAX measures and professional visual storytelling.</p>
+            <div class="proj-stack">
+              <span class="ps">Power BI</span>
+              <span class="ps">DAX</span>
+              <span class="ps">Data Analytics</span>
+              <span class="ps">Visualization</span>
+            </div>
+            <a href="https://github.com/TechyDi" target="_blank" class="proj-link">⌥ GitHub</a>
+          </div>
+        </div><!-- /proj-card -->
+
+      </div><!-- /proj-showcase -->
+    </section><!-- /projects -->
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 6 · CERTIFICATIONS — SLIDER
+         ══════════════════════════════════════════════════════════ -->
+    <section id="certifications">
+      <div class="s-tag reveal">04 · Credentials</div>
+      <h2 class="s-title reveal">Earned <em>Credentials</em></h2>
+
+      <p class="creds-intro reveal">
+        10 certifications earned across Java development, AI, data analytics, and digital skills —
+        issued by Google Cloud, Microsoft, AICTE, CodSoft, NxtWave, Edunet Foundation &amp; Odisha Government.
+      </p>
+
+      <!--
+        ── EDIT HERE: To add a new certificate:
+           1. Copy a .cert-slide block below
+           2. Replace the image src in assets/certs/
+           3. Update cert-name-s, cert-by-s, cert-badge-s text
+           The slider JS auto-detects slide count.
+      -->
+      <div class="cert-slider-wrap reveal">
+        <button class="slider-btn prev" id="slPrev" aria-label="Previous certificate">‹</button>
+
+        <div style="overflow:hidden; margin:0 56px;">
+          <div class="cert-track" id="certTrack">
+
+            <!-- Cert 1: CodSoft Java -->
+            <div class="cert-slide">
+              <div class="cert-img-wrap">
+                <img src="assets/certs/cert_codsoft.jpg" alt="CodSoft Java Certificate">
+              </div>
+              <div class="cert-info-wrap">
+                <div class="cert-name-s">Java Programming Virtual Internship</div>
+                <div class="cert-by-s">CodSoft · Jan 2026</div>
+                <div class="cert-badge-s">✓ Certificate of Completion</div>
+              </div>
+            </div>
+
+            <!-- Cert 2: Edunet AICTE Shell -->
+            <div class="cert-slide">
+              <div class="cert-img-wrap">
+                <img src="assets/certs/cert_aicte.jpg" alt="Edunet AICTE AI Certificate">
+              </div>
+              <div class="cert-info-wrap">
+                <div class="cert-name-s">AI &amp; Data Analytics Internship</div>
+                <div class="cert-by-s">Edunet Foundation · AICTE · Shell · Jan 2025</div>
+                <div class="cert-badge-s">✓ Verified by AICTE</div>
+              </div>
+            </div>
+
+            <!-- Cert 3: Google GenAI -->
+            <div class="cert-slide">
+              <div class="cert-img-wrap">
+                <img src="assets/certs/cert_genai.jpg" alt="Google Introduction to GenAI">
+              </div>
+              <div class="cert-info-wrap">
+                <div class="cert-name-s">Introduction to Generative AI</div>
+                <div class="cert-by-s">Google Cloud · Coursera · Sep 2024</div>
+                <div class="cert-badge-s">✓ Verified</div>
+              </div>
+            </div>
+
+            <!-- Cert 4: NxtWave -->
+            <div class="cert-slide">
+              <div class="cert-img-wrap">
+                <img src="assets/certs/cert_nxtwave.jpg" alt="NxtWave AI for Students">
+              </div>
+              <div class="cert-info-wrap">
+                <div class="cert-name-s">AI for Students: Build Your Own GenAI Model</div>
+                <div class="cert-by-s">NxtWave · IIT Delhi Expert · Jun 2024</div>
+                <div class="cert-badge-s">✓ Verified Achievement</div>
+              </div>
+            </div>
+
+            <!-- Cert 5: Power BI -->
+            <div class="cert-slide">
+              <div class="cert-img-wrap">
+                <img src="assets/certs/cert_powerbi.jpg" alt="Power BI Micro Course">
+              </div>
+              <div class="cert-info-wrap">
+                <div class="cert-name-s">7-Days Power BI Micro Course</div>
+                <div class="cert-by-s">CoursePe · ISO 9001:2015 Certified · Sep 2024</div>
+                <div class="cert-badge-s">✓ ISO Certified Platform</div>
+              </div>
+            </div>
+
+            <!-- Cert 6: HTML & CSS -->
+            <div class="cert-slide">
+              <div class="cert-img-wrap">
+                <img src="assets/certs/cert_html.jpg" alt="HTML and CSS Single-Page Website">
+              </div>
+              <div class="cert-info-wrap">
+                <div class="cert-name-s">HTML &amp; CSS: Building a Single-Page Website</div>
+                <div class="cert-by-s">Coursera Project Network · Sep 2024</div>
+                <div class="cert-badge-s">✓ Verified</div>
+              </div>
+            </div>
+
+            <!-- Cert 7: PowerPoint -->
+            <div class="cert-slide">
+              <div class="cert-img-wrap">
+                <img src="assets/certs/cert_ppt.jpg" alt="PowerPoint Course Certificate">
+              </div>
+              <div class="cert-info-wrap">
+                <div class="cert-name-s">Get Started with PowerPoint Applications</div>
+                <div class="cert-by-s">SkillUp EdTech · Coursera · Sep 2024</div>
+                <div class="cert-badge-s">✓ Verified</div>
+              </div>
+            </div>
+
+            <!-- Cert 8: Canva Resume -->
+            <div class="cert-slide">
+              <div class="cert-img-wrap">
+                <img src="assets/certs/cert_canva.jpg" alt="Build Resume using Canva">
+              </div>
+              <div class="cert-info-wrap">
+                <div class="cert-name-s">Build a Professional Resume using Canva</div>
+                <div class="cert-by-s">Coursera Project Network · Aug 2024</div>
+                <div class="cert-badge-s">✓ Verified</div>
+              </div>
+            </div>
+
+            <!-- Cert 9: AI Appreciate Badge (Odisha Government) -->
+            <div class="cert-slide">
+              <div class="cert-img-wrap">
+                <img src="assets/certs/badge_ai_appreciate.png"
+                     alt="AI Appreciate Badge"
+                     style="object-fit:contain; background:#fff;">
+              </div>
+              <div class="cert-info-wrap">
+                <div class="cert-name-s">AI Appreciate Badge</div>
+                <div class="cert-by-s">Odisha for AI · E&IT Dept · Govt. of Odisha · Intel · 2025</div>
+                <div class="cert-badge-s">✓ Government + Intel Verified</div>
+              </div>
+            </div>
+
+            <!-- Cert 10: AI Aware Badge (Odisha Government) -->
+            <div class="cert-slide">
+              <div class="cert-img-wrap">
+                <img src="assets/certs/badge_ai_aware.png"
+                     alt="AI Aware Badge"
+                     style="object-fit:contain; background:#fff;">
+              </div>
+              <div class="cert-info-wrap">
+                <div class="cert-name-s">AI Aware Badge</div>
+                <div class="cert-by-s">Odisha for AI · E&IT Dept · Govt. of Odisha · Intel · 2025</div>
+                <div class="cert-badge-s">✓ Government + Intel Verified</div>
+              </div>
+            </div>
+
+          </div><!-- /cert-track -->
+        </div><!-- /overflow wrapper -->
+
+        <button class="slider-btn next" id="slNext" aria-label="Next certificate">›</button>
+      </div><!-- /cert-slider-wrap -->
+
+      <!-- Dot navigation (generated by JS) -->
+      <div class="slider-dots" id="sliderDots"></div>
+
+    </section><!-- /certifications -->
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 7 · EDUCATION
+         ══════════════════════════════════════════════════════════ -->
+    <section id="education">
+      <div class="s-tag reveal">05 · Education</div>
+      <h2 class="s-title reveal">Academic <em>Journey</em></h2>
+
+      <!--
+        ── EDIT HERE: To add a new institution, copy a .edu-card block,
+           update degree, date, institution link, grade, activities, description.
+      -->
+      <div class="edu-timeline">
+
+        <!-- Education 1: B.Tech -->
+        <div class="edu-card reveal">
+          <div class="edu-icon">🎓</div>
+          <div class="edu-top">
+            <div class="edu-degree">Bachelor of Technology — Computer Science</div>
+            <div class="edu-date">Oct 2022 – May 2026</div>
+          </div>
+          <div class="edu-inst">
+            <!-- ── EDIT HERE: institution name & link ── -->
+            <a href="https://krupajal.ac.in/" target="_blank">
+              Krupajal Engineering College (KEC), Bhubaneswar
+            </a>
+          </div>
+          <div class="edu-grade">Currently Pursuing · Expected May 2026</div>
+          <div class="edu-acts">
+            <span class="edu-act">Class Representative (CR)</span>
+            <span class="edu-act">KEC-Coder Club Member</span>
+            <span class="edu-act">Digital Marketing Coordinator</span>
+            <span class="edu-act">Hackathon Participant</span>
+          </div>
+          <div class="edu-desc">
+            Pursuing B.Tech CSE with a strong foundation in
+            <mark>Java, OOP, Python, DSA, OS, and Data Communication</mark>.
+            Manages the official college Instagram as Digital Marketing Coordinator.
+            Active in coding challenges, cultural programs, and volunteer events.
+          </div>
+        </div><!-- /edu-card -->
+
+        <!-- Education 2: Higher Secondary -->
+        <div class="edu-card reveal">
+          <div class="edu-icon">📚</div>
+          <div class="edu-top">
+            <div class="edu-degree">Higher Secondary — Science Stream</div>
+            <div class="edu-date">Jan 2021 – Mar 2022</div>
+          </div>
+          <div class="edu-inst">
+            <a href="https://bit.ly/4c0oIft" target="_blank">
+              Kalinga Xavier College of Science and Commerce
+            </a>
+          </div>
+          <div class="edu-grade">First Division</div>
+          <div class="edu-acts">
+            <span class="edu-act">Class Monitor</span>
+            <span class="edu-act">Event Organizer</span>
+            <span class="edu-act">Science Club Member</span>
+            <span class="edu-act">Community Service Volunteer</span>
+          </div>
+          <div class="edu-desc">
+            Studied core science subjects —
+            <mark>Mathematics, Chemistry, Physics, Botany, Zoology</mark> — with hands-on
+            practical sessions. Served as Class Monitor and organized social and cultural events.
+          </div>
+        </div><!-- /edu-card -->
+
+        <!-- Education 3: High School -->
+        <div class="edu-card reveal">
+          <div class="edu-icon">🏫</div>
+          <div class="edu-top">
+            <div class="edu-degree">High School — General Studies</div>
+            <div class="edu-date">Mar 2013 – Feb 2020</div>
+          </div>
+          <div class="edu-inst">
+            <a href="https://www.facebook.com/Assvmk" target="_blank">
+              Awasik Saraswati Shishu Vidya Mandir (ASSVM), Odisha
+            </a>
+          </div>
+          <div class="edu-grade">First Division · Odisha Government Scholarship Recipient</div>
+          <div class="edu-acts">
+            <span class="edu-act">Science Exhibition Presenter</span>
+            <span class="edu-act">School Magazine Contributor</span>
+            <span class="edu-act">RSS Training</span>
+            <span class="edu-act">Govt. Scholarship Awardee</span>
+          </div>
+          <div class="edu-desc">
+            Excelled in <mark>Mathematics, Social Science, General Science</mark>, and literature
+            (Hindi, English, Odia, Sanskrit). Contributed to the school magazine and developed
+            leadership through RSS training.
+          </div>
+        </div><!-- /edu-card -->
+
+      </div><!-- /edu-timeline -->
+    </section><!-- /education -->
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 8 · CONTACT
+         ══════════════════════════════════════════════════════════ -->
+    <section id="contact">
+      <div class="s-tag reveal">06 · Contact</div>
+      <h2 class="s-title reveal">Let's <em>Connect</em></h2>
+
+      <div class="contact-wrap">
+
+        <!-- Left: description + direct contact links -->
+        <div class="contact-left reveal">
+          <!-- ── EDIT HERE: contact description ── -->
+          <p>Actively seeking <strong>Java Developer / Backend Engineer</strong> roles at MNCs.
+             Whether it's a job opportunity, a project collab, or just a conversation about code
+             — I'm always open.</p>
+
+          <!-- ── EDIT HERE: update links and values ── -->
+          <div class="c-links">
+            <a href="mailto:dineshkmohanta@gmail.com" class="c-link">
+              <span class="c-link-icon">✉</span>
+              <div>
+                <div class="c-link-sub">email</div>
+                <div class="c-link-val">dineshkmohanta@gmail.com</div>
+              </div>
+            </a>
+            <a href="tel:+916372524715" class="c-link">
+              <span class="c-link-icon">📞</span>
+              <div>
+                <div class="c-link-sub">phone</div>
+                <div class="c-link-val">+91-6372524715</div>
+              </div>
+            </a>
+            <a href="https://linkedin.com/in/dineshkmohanta" target="_blank" class="c-link">
+              <span class="c-link-icon">in</span>
+              <div>
+                <div class="c-link-sub">linkedin</div>
+                <div class="c-link-val">linkedin.com/in/dineshkmohanta</div>
+              </div>
+            </a>
+            <a href="https://github.com/TechyDi" target="_blank" class="c-link">
+              <span class="c-link-icon">⌥</span>
+              <div>
+                <div class="c-link-sub">github</div>
+                <div class="c-link-val">github.com/TechyDi</div>
+              </div>
+            </a>
+            <a href="#" class="c-link">
+              <span class="c-link-icon">📍</span>
+              <div>
+                <div class="c-link-sub">location</div>
+                <div class="c-link-val">Bhubaneswar, Odisha, India</div>
+              </div>
+            </a>
+          </div>
+        </div><!-- /contact-left -->
+
+        <!-- Right: contact form (wired to EmailJS in js/main.js) -->
+        <div class="reveal">
+          <form id="contactForm" novalidate>
+            <div class="cf-group">
+              <label class="cf-label" for="cf_name">Your Name</label>
+              <input class="cf-input" id="cf_name" type="text"
+                     placeholder="Jane Smith" required>
+            </div>
+            <div class="cf-group">
+              <label class="cf-label" for="cf_email">Email Address</label>
+              <input class="cf-input" id="cf_email" type="email"
+                     placeholder="jane@company.com" required>
+            </div>
+            <div class="cf-group">
+              <label class="cf-label" for="cf_subject">Subject</label>
+              <input class="cf-input" id="cf_subject" type="text"
+                     placeholder="Java Developer Opportunity" required>
+            </div>
+            <div class="cf-group">
+              <label class="cf-label" for="cf_message">Message</label>
+              <textarea class="cf-textarea" id="cf_message"
+                        placeholder="Tell me about the role or project..." required></textarea>
+            </div>
+            <button type="submit" class="btn-send" id="sendBtn">
+              <span class="stxt">SEND MESSAGE ✦</span>
+              <div class="spin"></div>
+            </button>
+          </form>
+          <p style="font-family:'JetBrains Mono',monospace;font-size:.6rem;
+                    color:var(--muted);margin-top:12px;line-height:1.6;">
+            ⚙ Messages delivered via EmailJS. Sign up at
+            <a href="https://emailjs.com" target="_blank" style="color:var(--c1);">emailjs.com</a>
+            and replace YOUR_PUBLIC_KEY / SERVICE_ID / TEMPLATE_ID in
+            <code style="color:var(--c1);">js/main.js</code>.
+          </p>
+        </div><!-- /form column -->
+
+      </div><!-- /contact-wrap -->
+    </section><!-- /contact -->
+
+
+  </div><!-- /wrapper -->
+
+
+  <!-- ════════════════════════════════════════════════════════════
+       SCROLL TO TOP BUTTON
+       ════════════════════════════════════════════════════════════ -->
+  <button class="to-top" id="toTop"
+          onclick="scrollTo({top:0,behavior:'smooth'})"
+          aria-label="Scroll to top">↑</button>
+
+
+  <!-- ════════════════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════════════════ -->
+  <footer>
+    <!-- ── EDIT HERE: footer credit text ── -->
+    <p>Designed &amp; Built by
+       <a href="https://github.com/TechyDi">Dinesh Kumar Mohanta</a>
+       · Bhubaneswar, India · 2026
+    </p>
+    <p class="pcred">Project: <em>CoreForge v3.0</em> · 5 Projects · 10 Credentials · Open to Work</p>
+  </footer>
+
+
+  <!-- ════════════════════════════════════════════════════════════
+       SCRIPTS
+       EmailJS SDK must load BEFORE main.js so emailjs is defined.
+       ════════════════════════════════════════════════════════════ -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
