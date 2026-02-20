@@ -27,7 +27,8 @@
    19. Contact Section
    20. Footer
    21. Scroll-to-Top Button
-   22. Responsive Breakpoints
+   22.About CoreForge section
+   23. Responsive Breakpoints
    ============================================================ */
 
 
@@ -1260,6 +1261,420 @@ footer .pcred em { color: var(--c1); font-style: normal; }
   box-shadow: 0 0 30px rgba(0,240,255,.4);
   transform: translateY(-4px);
 }
+
+    /* ══ COREFORGE SECTION ══════════════════════════════════════ */
+
+    /* Tagline beneath the section heading */
+    .cf-tagline {
+      font-size: 1.06rem;
+      color: var(--muted);
+      line-height: 1.85;
+      max-width: 640px;
+      margin-bottom: 64px;
+      padding-left: 22px;
+      border-left: 2px solid var(--c1);
+      box-shadow: -4px 0 16px rgba(0,240,255,.07);
+    }
+
+    /* Reusable labelled divider above each subsection */
+    .cf-label {
+      font-family: "JetBrains Mono", monospace;
+      font-size: .62rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--c1);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .cf-label::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: linear-gradient(90deg, var(--border2), transparent);
+      max-width: 260px;
+    }
+
+    /* ── Overview ─────────────────────────────────────────────── */
+    .cf-overview {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 52px;
+      align-items: start;
+      margin-bottom: 80px;
+    }
+    .cf-overview-copy p {
+      font-size: .96rem;
+      color: var(--muted);
+      line-height: 1.95;
+      margin-bottom: 16px;
+    }
+    .cf-overview-copy p strong { color: var(--text); font-weight: 700; }
+
+    /* Inline metric pills inside overview copy */
+    .cf-pill {
+      display: inline-block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: .67rem;
+      color: var(--c1);
+      background: rgba(0,240,255,.07);
+      border: 1px solid rgba(0,240,255,.2);
+      padding: 2px 9px;
+      border-radius: 6px;
+      margin: 0 2px;
+      white-space: nowrap;
+    }
+
+    /* Stat column */
+    .cf-stats { display: flex; flex-direction: column; gap: 13px; }
+    .cf-stat {
+      background: rgba(6,12,24,.9);
+      border: 1px solid var(--border);
+      border-radius: var(--r2);
+      padding: 20px 22px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .3s, transform .3s, box-shadow .3s;
+    }
+    .cf-stat::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 0;
+      background: linear-gradient(to bottom, var(--c1), var(--c2));
+      transition: height .45s cubic-bezier(.4,0,.2,1);
+    }
+    .cf-stat:hover::before { height: 100%; }
+    .cf-stat:hover {
+      border-color: rgba(0,240,255,.28);
+      transform: translateX(6px);
+      box-shadow: 0 10px 36px rgba(0,0,0,.4);
+    }
+    .cf-stat-val {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 2.6rem;
+      line-height: 1;
+      color: var(--c1);
+      letter-spacing: .06em;
+      margin-bottom: 3px;
+    }
+    .cf-stat-key {
+      font-family: "Rajdhani", sans-serif;
+      font-size: .92rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 5px;
+    }
+    .cf-stat-note {
+      font-family: "JetBrains Mono", monospace;
+      font-size: .6rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── Philosophy ───────────────────────────────────────────── */
+    .cf-philosophy {
+      background: rgba(6,12,24,.65);
+      border: 1px solid var(--border);
+      border-radius: var(--r2);
+      padding: 40px 44px;
+      margin-bottom: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Corner accent */
+    .cf-philosophy::before {
+      content: "";
+      position: absolute;
+      top: 0; right: 0;
+      width: 220px; height: 220px;
+      background: radial-gradient(circle at top right,
+        rgba(0,240,255,.05) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .cf-philosophy::after {
+      content: "";
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 140px; height: 140px;
+      background: radial-gradient(circle at bottom left,
+        rgba(255,60,172,.04) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .cf-principles { display: flex; flex-direction: column; }
+    .cf-principle {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 22px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+    .cf-principle:first-child { padding-top: 0; }
+    .cf-principle:last-child  { border-bottom: none; padding-bottom: 0; }
+    .cf-principle:hover .cf-pnum { color: var(--c1); }
+    .cf-pnum {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 1.8rem;
+      color: rgba(0,240,255,.18);
+      line-height: 1;
+      letter-spacing: .06em;
+      transition: color .3s;
+    }
+    .cf-pbody {
+      font-size: .93rem;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+    .cf-pbody strong {
+      color: var(--text);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 3px;
+      font-size: .96rem;
+    }
+
+    /* ── Feature grid ─────────────────────────────────────────── */
+    .cf-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 80px;
+    }
+    .cf-feat {
+      background: rgba(6,12,24,.88);
+      border: 1px solid var(--border);
+      border-radius: var(--r2);
+      padding: 28px 24px;
+      position: relative;
+      overflow: hidden;
+      transition: transform .38s cubic-bezier(.4,0,.2,1),
+                  box-shadow .38s, border-color .38s;
+    }
+    /* Scan line sweep on hover */
+    .cf-feat::before {
+      content: "";
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--c1), transparent);
+      transition: width .5s cubic-bezier(.4,0,.2,1);
+      box-shadow: 0 0 8px var(--c1);
+    }
+    .cf-feat:hover::before { width: 100%; }
+    /* Top-right ghost number */
+    .cf-feat::after {
+      content: attr(data-n);
+      position: absolute;
+      top: 10px; right: 16px;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 3.2rem;
+      color: rgba(0,240,255,.04);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .cf-feat:hover {
+      border-color: rgba(0,240,255,.26);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 56px rgba(0,0,0,.5), 0 0 28px rgba(0,240,255,.06);
+    }
+    .cf-feat-glyph {
+      font-size: 1.2rem;
+      color: var(--c1);
+      opacity: .65;
+      margin-bottom: 16px;
+      display: block;
+      font-family: "JetBrains Mono", monospace;
+      transition: opacity .3s;
+    }
+    .cf-feat:hover .cf-feat-glyph { opacity: 1; }
+    .cf-feat-name {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 1.18rem;
+      letter-spacing: .06em;
+      color: var(--text);
+      margin-bottom: 11px;
+    }
+    .cf-feat-desc {
+      font-size: .84rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* ── Two-column steps layout ──────────────────────────────── */
+    .cf-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-bottom: 72px;
+    }
+    .cf-panel {
+      background: rgba(6,12,24,.85);
+      border: 1px solid var(--border);
+      border-radius: var(--r2);
+      padding: 36px 32px;
+    }
+    .cf-steps { display: flex; flex-direction: column; }
+    .cf-step {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 18px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+    .cf-step:first-child { padding-top: 0; }
+    .cf-step:last-child  { border-bottom: none; padding-bottom: 0; }
+    .cf-snum {
+      font-family: "JetBrains Mono", monospace;
+      font-size: .68rem;
+      color: var(--c1);
+      background: rgba(0,240,255,.07);
+      border: 1px solid rgba(0,240,255,.18);
+      border-radius: 8px;
+      width: 38px; height: 28px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+      letter-spacing: .04em;
+    }
+    .cf-sbody {
+      font-size: .88rem;
+      color: var(--muted);
+      line-height: 1.82;
+    }
+    .cf-sbody strong {
+      color: var(--text);
+      display: block;
+      margin-bottom: 4px;
+      font-size: .91rem;
+      font-weight: 700;
+    }
+    .cf-mono {
+      font-family: "JetBrains Mono", monospace;
+      font-size: .7rem;
+      color: var(--c1);
+      background: rgba(0,240,255,.07);
+      border: 1px solid rgba(0,240,255,.15);
+      padding: 1px 8px;
+      border-radius: 5px;
+    }
+
+    /* ── License + Roadmap row ────────────────────────────────── */
+    .cf-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 22px;
+      margin-bottom: 60px;
+    }
+    .cf-card {
+      background: rgba(6,12,24,.85);
+      border: 1px solid var(--border);
+      border-radius: var(--r2);
+      padding: 34px 30px;
+      transition: border-color .3s;
+    }
+    .cf-card:hover { border-color: rgba(0,240,255,.22); }
+    .cf-card p {
+      font-size: .9rem;
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+    .cf-card p:last-of-type { margin-bottom: 0; }
+    .cf-card p strong { color: var(--text); }
+    .cf-mit {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 16px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: .62rem;
+      color: var(--c5);
+      background: rgba(0,255,136,.07);
+      border: 1px solid rgba(0,255,136,.22);
+      padding: 5px 16px;
+      border-radius: 100px;
+      letter-spacing: .1em;
+    }
+
+    /* ── Closing quote ────────────────────────────────────────── */
+    .cf-closing {
+      position: relative;
+      padding: 48px 52px;
+      background: rgba(6,12,24,.7);
+      border: 1px solid var(--border);
+      border-radius: var(--r2);
+      overflow: hidden;
+    }
+    .cf-closing-line {
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: linear-gradient(to bottom, var(--c1), var(--c2), var(--c3));
+      border-radius: 3px 0 0 3px;
+    }
+    /* Large ghost quotation mark */
+    .cf-closing::before {
+      content: "\201C";
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 9rem;
+      color: rgba(0,240,255,.04);
+      position: absolute;
+      top: -20px; left: 36px;
+      line-height: 1;
+      pointer-events: none;
+    }
+    /* Bottom-right glow */
+    .cf-closing::after {
+      content: "";
+      position: absolute;
+      bottom: -90px; right: -90px;
+      width: 280px; height: 280px;
+      background: radial-gradient(circle,
+        rgba(255,60,172,.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cf-quote {
+      font-family: "Rajdhani", sans-serif;
+      font-size: 1.1rem;
+      font-style: normal;
+      color: var(--text);
+      line-height: 2.05;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+    }
+    .cf-sig {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      position: relative;
+      z-index: 1;
+    }
+    .cf-sig-name {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 1.12rem;
+      letter-spacing: .1em;
+      color: var(--c1);
+    }
+    .cf-sig-sub {
+      font-family: "JetBrains Mono", monospace;
+      font-size: .62rem;
+      color: var(--muted);
+      letter-spacing: .08em;
+    }
+
+    /* ── Responsive ───────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .cf-overview,
+      .cf-cols,
+      .cf-bottom         { grid-template-columns: 1fr; }
+      .cf-features       { grid-template-columns: 1fr; }
+      .cf-philosophy     { padding: 28px 22px; }
+      .cf-closing        { padding: 32px 28px; }
+    }
 
 
 /* ── 22. RESPONSIVE BREAKPOINTS ──────────────────────────────── */

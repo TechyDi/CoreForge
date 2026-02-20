@@ -841,12 +841,407 @@
       </div><!-- /edu-timeline -->
     </section><!-- /education -->
 
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 8 · About CoreForge
+         ══════════════════════════════════════════════════════════ -->
+
+    <section id="coreforge">
+
+  <!-- ── Section label + main heading ──────────────────────────── -->
+  <div class="s-tag reveal">06 · The System</div>
+  <h2 class="s-title reveal">What is <em>CoreForge</em></h2>
+
+  <!-- ── Tagline ────────────────────────────────────────────────── -->
+  <p class="cf-tagline reveal">
+    A design philosophy and modular codebase for building immersive developer
+    portfolios — engineered for permanence, not trends.
+  </p>
+
+
+  <!-- ══ OVERVIEW ══════════════════════════════════════════════════ -->
+  <div class="cf-overview">
+
+    <div class="cf-overview-copy reveal">
+      <div class="cf-label">Overview</div>
+
+      <p>
+        CoreForge began as a personal frustration. Portfolio templates looked identical,
+        aged quickly, and were painful to update. So I built my own system from scratch —
+        a structured, opinionated foundation that prioritises
+        <strong>authenticity over decoration</strong> and
+        <strong>maintainability over novelty</strong>.
+      </p>
+
+      <p>
+        It is not a framework or a library. It is a hand-authored codebase —
+        <span class="cf-pill">index.html</span>
+        <span class="cf-pill">styles.css</span>
+        <span class="cf-pill">main.js</span> —
+        with a clear architecture, reusable section patterns, and a visual language
+        built to endure as a career grows.
+      </p>
+
+      <p>
+        Every component, animation, and layout decision was made deliberately.
+        Nothing exists in this codebase without a reason. The goal was a portfolio
+        system that feels engineered, not assembled.
+      </p>
+    </div>
+
+    <!-- Metric column -->
+    <div class="cf-stats">
+
+      <div class="cf-stat reveal">
+        <div class="cf-stat-val">3</div>
+        <div class="cf-stat-key">Source Files</div>
+        <div class="cf-stat-note">index.html · styles.css · main.js<br>No build step. No configuration.</div>
+      </div>
+
+      <div class="cf-stat reveal">
+        <div class="cf-stat-val">0</div>
+        <div class="cf-stat-key">Dependencies</div>
+        <div class="cf-stat-note">No frameworks. No bundlers. No runtime libraries. Vanilla HTML, CSS, and JavaScript only.</div>
+      </div>
+
+      <div class="cf-stat reveal">
+        <div class="cf-stat-val">MIT</div>
+        <div class="cf-stat-key">License</div>
+        <div class="cf-stat-note">Free to use, fork, modify, and deploy — for any purpose, commercial or personal.</div>
+      </div>
+
+    </div>
+  </div><!-- /cf-overview -->
+
+
+  <!-- ══ CORE PHILOSOPHY ═══════════════════════════════════════════ -->
+  <div class="cf-philosophy reveal">
+    <div class="cf-label">Core Philosophy</div>
+
+    <div class="cf-principles">
+
+      <div class="cf-principle">
+        <div class="cf-pnum">01</div>
+        <div class="cf-pbody">
+          <strong>Intentional over impressive.</strong>
+          Every visual effect must serve the content, not obscure it. Animations communicate
+          state. Layout directs attention. Nothing decorative exists by accident.
+        </div>
+      </div>
+
+      <div class="cf-principle">
+        <div class="cf-pnum">02</div>
+        <div class="cf-pbody">
+          <strong>Maintainability is a feature.</strong>
+          A portfolio that takes two hours to update will never be updated.
+          CoreForge is structured so that adding a new project, certificate, or section
+          means editing one clearly-labelled HTML block — nothing else.
+        </div>
+      </div>
+
+      <div class="cf-principle">
+        <div class="cf-pnum">03</div>
+        <div class="cf-pbody">
+          <strong>Performance without compromise.</strong>
+          No JavaScript frameworks are loaded at runtime. CSS keyframes handle every ambient
+          animation. The particle canvas is a single documented vanilla class. The codebase
+          stays lean regardless of how much content is added.
+        </div>
+      </div>
+
+      <div class="cf-principle">
+        <div class="cf-pnum">04</div>
+        <div class="cf-pbody">
+          <strong>Identity before aesthetics.</strong>
+          The visual language should reflect who built it. The CoreForge design system uses
+          five colour variables in a single <span class="cf-mono">:root&nbsp;{&nbsp;}</span>
+          block — changing those five values reskins the entire portfolio in under two minutes.
+        </div>
+      </div>
+
+      <div class="cf-principle">
+        <div class="cf-pnum">05</div>
+        <div class="cf-pbody">
+          <strong>Open by default.</strong>
+          Code hoarded is code wasted. CoreForge is released openly so other developers can
+          learn from it, build on it, and make it genuinely their own.
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /cf-philosophy -->
+
+
+  <!-- ══ FEATURE HIGHLIGHTS ════════════════════════════════════════ -->
+  <div class="cf-label reveal">Feature Highlights</div>
+  <div class="cf-features">
+
+    <div class="cf-feat reveal" data-n="01">
+      <span class="cf-feat-glyph">◈</span>
+      <div class="cf-feat-name">Design Token System</div>
+      <div class="cf-feat-desc">
+        Five CSS variables in one <span class="cf-mono">:root</span> block control every colour
+        across the entire portfolio. Reskin completely by changing those five values. No
+        selector-hunting required.
+      </div>
+    </div>
+
+    <div class="cf-feat reveal" data-n="02">
+      <span class="cf-feat-glyph">⟡</span>
+      <div class="cf-feat-name">CSS-Native Animations</div>
+      <div class="cf-feat-desc">
+        Aurora gradients, orbit rings, float pulses, and gradient-border sweeps run entirely
+        in CSS keyframes — zero JavaScript animation libraries, zero layout thrash.
+      </div>
+    </div>
+
+    <div class="cf-feat reveal" data-n="03">
+      <span class="cf-feat-glyph">⬡</span>
+      <div class="cf-feat-name">Vanilla Canvas Particles</div>
+      <div class="cf-feat-desc">
+        Seventy connected particles with mouse repulsion, written as a clean documented
+        class in under 60 lines. Runs at 60fps on mid-range hardware. No library required.
+      </div>
+    </div>
+
+    <div class="cf-feat reveal" data-n="04">
+      <span class="cf-feat-glyph">◉</span>
+      <div class="cf-feat-name">Modular Section Architecture</div>
+      <div class="cf-feat-desc">
+        Each section is a self-contained HTML block. Adding a project card, certificate
+        slide, or education entry is a direct copy-paste at a marked comment —
+        no surrounding code breaks.
+      </div>
+    </div>
+
+    <div class="cf-feat reveal" data-n="05">
+      <span class="cf-feat-glyph">◌</span>
+      <div class="cf-feat-name">IntersectionObserver Reveals</div>
+      <div class="cf-feat-desc">
+        Every content block enters the viewport with a staggered fade-rise. Skill bars
+        animate to their target values the first time they scroll into view. One observer
+        handles the entire page.
+      </div>
+    </div>
+
+    <div class="cf-feat reveal" data-n="06">
+      <span class="cf-feat-glyph">⊞</span>
+      <div class="cf-feat-name">Zero Build Step</div>
+      <div class="cf-feat-desc">
+        Open <span class="cf-mono">index.html</span> in any browser. It works.
+        No Node.js, no Webpack, no compilation. Deploy to GitHub Pages or any
+        static host by dragging a folder.
+      </div>
+    </div>
+
+  </div><!-- /cf-features -->
+
+
+  <!-- ══ HOW TO USE + DEPLOYMENT ═══════════════════════════════════ -->
+  <div class="cf-cols">
+
+    <!-- How to Use the Code -->
+    <div class="cf-panel reveal">
+      <div class="cf-label">How to Use the Code</div>
+      <div class="cf-steps">
+
+        <div class="cf-step">
+          <div class="cf-snum">01</div>
+          <div class="cf-sbody">
+            <strong>Download the source</strong>
+            Clone the repository or download the ZIP from GitHub. Extract it.
+            The structure is flat:
+            <span class="cf-mono">index.html</span>&nbsp;·&nbsp;
+            <span class="cf-mono">css/</span>&nbsp;·&nbsp;
+            <span class="cf-mono">js/</span>&nbsp;·&nbsp;
+            <span class="cf-mono">assets/</span>
+          </div>
+        </div>
+
+        <div class="cf-step">
+          <div class="cf-snum">02</div>
+          <div class="cf-sbody">
+            <strong>Set your design tokens</strong>
+            Open <span class="cf-mono">css/styles.css</span> and edit the five colour
+            variables inside <span class="cf-mono">:root&nbsp;{&nbsp;}</span> at the top of
+            the file. Every colour in the portfolio updates instantly.
+          </div>
+        </div>
+
+        <div class="cf-step">
+          <div class="cf-snum">03</div>
+          <div class="cf-sbody">
+            <strong>Update your content</strong>
+            Search <span class="cf-mono">index.html</span> for
+            <span class="cf-mono">EDIT HERE</span> comments. Every section — name, bio,
+            roles, projects, certifications, education — has one clearly placed marker.
+          </div>
+        </div>
+
+        <div class="cf-step">
+          <div class="cf-snum">04</div>
+          <div class="cf-sbody">
+            <strong>Drop in your assets</strong>
+            Place your photo in <span class="cf-mono">assets/images/</span>, project
+            screenshots with consistent filenames, and your CV PDF in
+            <span class="cf-mono">assets/resume/</span>. Update the
+            <span class="cf-mono">src</span> paths in the HTML to match.
+          </div>
+        </div>
+
+        <div class="cf-step">
+          <div class="cf-snum">05</div>
+          <div class="cf-sbody">
+            <strong>Wire the contact form</strong>
+            Open <span class="cf-mono">js/main.js</span> and replace the three EmailJS
+            constants at the top with your own credentials from
+            <span class="cf-mono">emailjs.com</span>. Free tier supports 200 sends per month.
+          </div>
+        </div>
+
+        <div class="cf-step">
+          <div class="cf-snum">06</div>
+          <div class="cf-sbody">
+            <strong>Preview locally before deploying</strong>
+            Open <span class="cf-mono">index.html</span> directly in any modern browser.
+            No local server is required. Verify all sections, images, and animations
+            before pushing to production.
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /cf-panel -->
+
+    <!-- Deployment Guide -->
+    <div class="cf-panel reveal">
+      <div class="cf-label">Deployment Guide — GitHub Pages</div>
+      <div class="cf-steps">
+
+        <div class="cf-step">
+          <div class="cf-snum">01</div>
+          <div class="cf-sbody">
+            <strong>Create a GitHub account</strong>
+            Go to <span class="cf-mono">github.com</span> and sign up if you do not
+            already have one. It is free, and no payment information is required.
+          </div>
+        </div>
+
+        <div class="cf-step">
+          <div class="cf-snum">02</div>
+          <div class="cf-sbody">
+            <strong>Create a new repository</strong>
+            Click the plus icon at the top right. Name the repository
+            <span class="cf-mono">username.github.io</span> for a root domain, or any
+            name if you prefer a subdirectory URL.
+          </div>
+        </div>
+
+        <div class="cf-step">
+          <div class="cf-snum">03</div>
+          <div class="cf-sbody">
+            <strong>Upload your files</strong>
+            Drag the CoreForge folder contents directly into the GitHub file browser,
+            or push from a terminal with
+            <span class="cf-mono">git&nbsp;push&nbsp;origin&nbsp;main</span>.
+            All assets and source files must be committed together.
+          </div>
+        </div>
+
+        <div class="cf-step">
+          <div class="cf-snum">04</div>
+          <div class="cf-sbody">
+            <strong>Enable GitHub Pages</strong>
+            Open the repository Settings, select Pages from the left sidebar.
+            Under Source, choose Deploy from a branch and set the branch to
+            <span class="cf-mono">main</span>. Save.
+          </div>
+        </div>
+
+        <div class="cf-step">
+          <div class="cf-snum">05</div>
+          <div class="cf-sbody">
+            <strong>Your site is live</strong>
+            GitHub provides a public URL within two to three minutes.
+            Every future commit to the main branch redeploys automatically.
+            No server costs, no hosting configuration, no maintenance.
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /cf-panel -->
+
+  </div><!-- /cf-cols -->
+
+
+  <!-- ══ LICENSING + ROADMAP ═══════════════════════════════════════ -->
+  <div class="cf-bottom">
+
+    <div class="cf-card reveal">
+      <div class="cf-label">Licensing</div>
+      <p>
+        CoreForge is released under the <strong>MIT License</strong>. You are free to use,
+        copy, modify, merge, publish, and distribute this codebase for any purpose —
+        personal portfolios, commercial projects, or educational use — with no restrictions
+        beyond retaining the original license notice.
+      </p>
+      <p>
+        Attribution is not required. If CoreForge helped you land a role or saved you weeks
+        of groundwork, a GitHub star is the most useful acknowledgement you can give.
+      </p>
+      <div class="cf-mit">MIT License · Free to Use · Free to Fork</div>
+    </div>
+
+    <div class="cf-card reveal">
+      <div class="cf-label">Future Roadmap</div>
+      <p>
+        The next iteration of CoreForge will introduce a structured
+        <strong>component library</strong> — individual, tested HTML blocks for each
+        section type, so developers can assemble a portfolio the way engineers assemble
+        systems: one verified module at a time.
+      </p>
+      <p>
+        Planned additions include a <strong>dark-to-light theme toggle</strong>,
+        a lightweight CLI tool that generates personalised section stubs from a
+        JSON config file, and a public component registry where contributors can
+        submit and reuse blocks.
+      </p>
+      <p>
+        The long-term goal is a portfolio system that scales with a career — from
+        student projects to senior engineering roles — without ever needing to be
+        rebuilt from scratch.
+      </p>
+    </div>
+
+  </div><!-- /cf-bottom -->
+
+
+  <!-- ══ CLOSING NOTE ══════════════════════════════════════════════ -->
+  <div class="cf-closing reveal">
+    <div class="cf-closing-line"></div>
+
+    <blockquote class="cf-quote">
+      I built CoreForge because I wanted a portfolio that felt like mine — not a template
+      that ten thousand other developers also had. The process of building it taught me
+      more about CSS architecture, JavaScript performance, and honest design than any
+      course or tutorial could. If this system gives another developer the same foundation
+      to start from, then the time spent engineering it was more than worth it.
+      Fork it. Break it. Build something better.
+    </blockquote>
+
+    <div class="cf-sig">
+      <span class="cf-sig-name">Dinesh Kumar Mohanta</span>
+      <span class="cf-sig-sub">Builder of CoreForge · CSE Student · Bhubaneswar, Odisha, India · 2026</span>
+    </div>
+
+  </div><!-- /cf-closing -->
+
+</section><!-- /coreforge -->
+
 
     <!-- ══════════════════════════════════════════════════════════
-         SECTION 8 · CONTACT
+         SECTION 9 · CONTACT
          ══════════════════════════════════════════════════════════ -->
     <section id="contact">
-      <div class="s-tag reveal">06 · Contact</div>
+      <div class="s-tag reveal">07 · Contact</div>
       <h2 class="s-title reveal">Let's <em>Connect</em></h2>
 
       <div class="contact-wrap">
