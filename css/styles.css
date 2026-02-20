@@ -1666,17 +1666,6 @@ footer .pcred em { color: var(--c1); font-style: normal; }
       letter-spacing: .08em;
     }
 
-    /* ── Responsive ───────────────────────────────────────────── */
-    @media (max-width: 900px) {
-      .cf-overview,
-      .cf-cols,
-      .cf-bottom         { grid-template-columns: 1fr; }
-      .cf-features       { grid-template-columns: 1fr; }
-      .cf-philosophy     { padding: 28px 22px; }
-      .cf-closing        { padding: 32px 28px; }
-    }
-
-
 /* ── 22. RESPONSIVE BREAKPOINTS ──────────────────────────────── */
 @media (max-width: 900px) {
   .hero-grid,
